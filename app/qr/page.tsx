@@ -36,10 +36,9 @@ export default function QrPage() {
   return (
     <main className="flex flex-col min-h-[100dvh] w-full select-none">
       {/* SECCIÓN 1: TEAL (Original) */}
-      <div className="flex-1 flex flex-col relative">
-        <section
-          className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] text-brand-cream sticky top-0"
-        >
+      <section
+        className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] text-brand-cream relative"
+      >
         {/* Logo Casa Lavinia */}
         <div className="mt-2 animate-fade-in flex flex-col items-center z-10 -mb-4 md:-mb-8">
           <Image
@@ -70,13 +69,11 @@ export default function QrPage() {
           </motion.h1>
         </div>
       </section>
-      </div>
 
       {/* SECCIÓN 2: ROJO (Chiltepín) */}
-      <div className="flex-1 flex flex-col relative">
-        <section
-          className="flex-1 bg-brand-red flex flex-col justify-center items-center text-center p-4 text-brand-cream relative"
-        >
+      <section
+        className="flex-1 bg-brand-red flex flex-col justify-center items-center text-center p-4 text-brand-cream relative"
+      >
         {/* Palabra JERKY */}
         <div className="w-full flex justify-center z-20">
           <motion.h1 
@@ -99,13 +96,11 @@ export default function QrPage() {
           CARNE SECA • COMING SOON
         </div>
       </section>
-      </div>
 
       {/* SECCIÓN 3: ÁMBAR (BBQ) */}
-      <div className="flex-1 flex flex-col relative">
-        <section
-          className="flex-1 bg-brand-amber flex flex-col items-center justify-between text-center px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3 md:px-6 md:pb-[calc(1.5rem+env(safe-area-inset-bottom))] md:pt-5 text-brand-cream sticky bottom-0"
-        >
+      <section
+        className="flex-1 bg-brand-amber flex flex-col items-center justify-between text-center px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3 md:px-6 md:pb-[calc(1.5rem+env(safe-area-inset-bottom))] md:pt-5 text-brand-cream relative"
+      >
         <div className="w-full flex flex-col items-center justify-start gap-5 md:gap-7">
           {/* Subtitle / Hook */}
           <div className="max-w-md px-4">
@@ -173,7 +168,9 @@ export default function QrPage() {
           </div>
         </div>
       </section>
-      </div>
+
+      {/* FONDO INFINITO ÁMBAR PARA EL SCROLL DE SAFARI */}
+      <div className="w-full h-[150vh] bg-brand-amber shrink-0" />
     </main>
   );
 }
