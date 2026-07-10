@@ -34,10 +34,10 @@ export default function QrPage() {
   };
 
   return (
-    <main className="flex flex-col h-dvh w-full overflow-hidden select-none">
+    <main className="flex flex-col h-[100vh] w-full overflow-hidden select-none">
       {/* SECCIÓN 1: TEAL (Original) */}
       <section
-        className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 text-brand-cream relative"
+        className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] text-brand-cream relative"
       >
         {/* Logo Casa Lavinia */}
         <div className="mt-2 animate-fade-in flex flex-col items-center z-10 -mb-4 md:-mb-8">
@@ -99,7 +99,7 @@ export default function QrPage() {
 
       {/* SECCIÓN 3: ÁMBAR (BBQ) */}
       <section
-        className="flex-1 bg-brand-amber flex flex-col items-center justify-between text-center px-4 pb-4 pt-3 md:px-6 md:pb-6 md:pt-5 text-brand-cream relative"
+        className="flex-1 bg-brand-amber flex flex-col items-center justify-between text-center px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3 md:px-6 md:pb-[calc(1.5rem+env(safe-area-inset-bottom))] md:pt-5 text-brand-cream relative"
       >
         <div className="w-full flex flex-col items-center justify-start gap-5 md:gap-7">
           {/* Subtitle / Hook */}
