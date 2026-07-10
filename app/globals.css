@@ -24,6 +24,10 @@
   --font-mauren: var(--font-mauren);
 }
 
+html, body {
+  overscroll-behavior: none;
+}
+
 body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
