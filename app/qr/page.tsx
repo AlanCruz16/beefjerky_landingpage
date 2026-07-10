@@ -35,9 +35,9 @@ export default function QrPage() {
 
   return (
     <main className="flex flex-col min-h-[100dvh] w-full select-none">
-      {/* SECCIÓN 1: TEAL (Original) */}
+      {/* SECCIÓN 1: TEAL */}
       <section
-        className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] text-brand-cream relative"
+        className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] text-brand-cream sticky top-0"
       >
         {/* Logo Casa Lavinia */}
         <div className="mt-2 animate-fade-in flex flex-col items-center z-10 -mb-4 md:-mb-8">
@@ -169,8 +169,20 @@ export default function QrPage() {
         </div>
       </section>
 
-      {/* FONDO INFINITO ÁMBAR PARA EL SCROLL DE SAFARI */}
-      <div className="w-full h-[150vh] bg-brand-amber shrink-0" />
+      {/* REDDIT HACK: Safari Liquid Glass Shim para barra inferior */}
+      <div 
+        aria-hidden="true" 
+        style={{ 
+          position: 'fixed', 
+          bottom: '-10px', 
+          left: 0, 
+          width: '100%', 
+          height: '20px', 
+          backgroundColor: 'var(--color-brand-amber)', 
+          zIndex: 9999, 
+          pointerEvents: 'none' 
+        }} 
+      />
     </main>
   );
 }
