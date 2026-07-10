@@ -35,6 +35,10 @@ export default function QrPage() {
 
   return (
     <main className="flex flex-col h-[100vh] w-full overflow-hidden select-none">
+      {/* Safari iOS 26 Liquid Glass: invisible fixed sentinels for toolbar color sampling */}
+      <div aria-hidden="true" className="fixed top-0 left-0 w-full h-1 bg-brand-teal z-[9999] pointer-events-none" />
+      <div aria-hidden="true" className="fixed bottom-0 left-0 w-full h-1 bg-brand-amber z-[9999] pointer-events-none" />
+
       {/* SECCIÓN 1: TEAL (Original) */}
       <section
         className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] text-brand-cream relative"
