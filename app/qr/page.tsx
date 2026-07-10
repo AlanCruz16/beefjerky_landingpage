@@ -23,16 +23,16 @@ export default function QrPage() {
   return (
     <main className="flex flex-col h-dvh w-full overflow-hidden select-none">
       {/* SECCIÓN 1: TEAL (Original) */}
-      <section 
+      <section
         className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 text-brand-cream relative"
       >
         {/* Logo Casa Lavinia */}
         <div className="mt-2 animate-fade-in flex flex-col items-center z-10 -mb-4 md:-mb-8">
-          <Image 
-            src="/logos/logo lavinia BLANCO Y NEGRO_2.svg" 
-            alt="Casa Lavinia Logo" 
-            width={400} 
-            height={160} 
+          <Image
+            src="/logos/logo-blanco.svg"
+            alt="Casa Lavinia Logo"
+            width={400}
+            height={160}
             className="h-24 md:h-32 w-auto object-contain drop-shadow-md scale-125"
             priority
           />
