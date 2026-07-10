@@ -34,7 +34,7 @@ export default function QrPage() {
   };
 
   return (
-    <main className="flex flex-col h-[100vh] w-full overflow-hidden select-none">
+    <main className="flex flex-col min-h-[100dvh] w-full select-none">
       {/* SECCIÓN 1: TEAL (Original) */}
       <section
         className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] text-brand-cream relative"
