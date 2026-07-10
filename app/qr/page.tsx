@@ -2,6 +2,26 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+  }
+};
+const containerDelayed = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.8 }
+  }
+};
+const letterAnim = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100 } }
+};
 
 export default function QrPage() {
   const [email, setEmail] = useState("");
@@ -39,10 +59,19 @@ export default function QrPage() {
         </div>
 
         {/* Palabra BEEF */}
-        <div className="w-full flex justify-center items-center z-20">
-          <h1 className="font-mauren text-[28vw] md:text-[22vh] leading-none tracking-tight select-none uppercase transform scale-y-110 scale-105 drop-shadow-xl animate-scale-up">
-            BEEF
-          </h1>
+        <div className="w-full flex justify-center items-center z-20 overflow-hidden">
+          <motion.h1 
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className="font-mauren text-[28vw] md:text-[22vh] leading-none tracking-tight select-none uppercase transform scale-y-110 scale-105 drop-shadow-xl flex"
+          >
+            {Array.from("BEEF").map((letter, index) => (
+              <motion.span key={index} variants={letterAnim} className="inline-block">
+                {letter === " " ? "\\u00A0" : letter}
+              </motion.span>
+            ))}
+          </motion.h1>
         </div>
       </section>
 
@@ -51,9 +80,20 @@ export default function QrPage() {
         className="flex-1 bg-brand-red flex flex-col justify-center items-center text-center p-4 text-brand-cream relative"
       >
         {/* Palabra JERKY */}
-        <h1 className="mt-4 md:mt-8 font-mauren text-[28vw] md:text-[22vh] leading-none tracking-tight select-none uppercase transform scale-y-110 scale-105 drop-shadow-xl animate-scale-up-delayed">
-          JERKY
-        </h1>
+        <div className="overflow-hidden flex justify-center">
+          <motion.h1 
+            variants={containerDelayed}
+            initial="hidden"
+            animate="visible"
+            className="mt-4 md:mt-8 font-mauren text-[28vw] md:text-[22vh] leading-none tracking-tight select-none uppercase transform scale-y-110 scale-105 drop-shadow-xl flex"
+          >
+            {Array.from("JERKY").map((letter, index) => (
+              <motion.span key={index} variants={letterAnim} className="inline-block">
+                {letter === " " ? "\\u00A0" : letter}
+              </motion.span>
+            ))}
+          </motion.h1>
+        </div>
         {/* Coming Soon bar */}
         <div className="mt-2 tracking-[0.15em] text-xs md:text-sm font-sans font-bold bg-brand-charcoal text-brand-cream py-1 px-4 rounded-sm animate-fade-in-delayed">
           CARNE SECA • COMING SOON
