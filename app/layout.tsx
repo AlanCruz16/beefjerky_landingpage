@@ -49,7 +49,12 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} ${passionOne.variable} ${caveat.variable} ${mauren.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {/* Safari iOS 26 Liquid Glass: fixed sentinels for toolbar color sampling */}
+        <div aria-hidden="true" style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '4px', backgroundColor: '#5BBFAD', zIndex: 9999, pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'fixed', bottom: 0, left: 0, width: '100%', height: '4px', backgroundColor: '#D4894A', zIndex: 9999, pointerEvents: 'none' }} />
+        {children}
+      </body>
     </html>
   );
 }
