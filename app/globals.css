@@ -25,7 +25,7 @@
 }
 
 body {
-  background: var(--color-brand-amber);
+  background: linear-gradient(to bottom, var(--color-brand-teal) 50%, var(--color-brand-amber) 50%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   overflow: hidden;
