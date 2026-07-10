@@ -42,16 +42,20 @@ export default function QrPage() {
 
         {/* Palabra BEEF */}
         <div className="w-full flex justify-center items-center z-20">
-          <div className="overflow-hidden pb-6 px-4 -mb-6 pt-2">
-            <motion.h1 
-              initial={{ y: "110%" }}
-              animate={{ y: 0 }}
-              transition={{ ease: [0.33, 1, 0.68, 1], duration: 1, delay: 0.2 }}
-              className="font-mauren text-[28vw] md:text-[22vh] leading-none tracking-tight select-none uppercase transform scale-y-110 scale-105 drop-shadow-xl"
-            >
-              BEEF
-            </motion.h1>
-          </div>
+          <motion.h1 
+            initial={{ scaleX: 0.5, scaleY: 0.5, opacity: 0 }}
+            animate={{ scaleX: 1.05, scaleY: 1.10, opacity: 1 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 150, 
+              damping: 10, 
+              mass: 1.5,
+              delay: 0.1
+            }}
+            className="font-mauren text-[28vw] md:text-[22vh] leading-none tracking-tight select-none uppercase drop-shadow-xl"
+          >
+            BEEF
+          </motion.h1>
         </div>
       </section>
 
@@ -61,16 +65,20 @@ export default function QrPage() {
       >
         {/* Palabra JERKY */}
         <div className="w-full flex justify-center z-20">
-          <div className="overflow-hidden pb-6 px-4 -mb-6 mt-4 md:mt-8 pt-2">
-            <motion.h1 
-              initial={{ y: "110%" }}
-              animate={{ y: 0 }}
-              transition={{ ease: [0.33, 1, 0.68, 1], duration: 1, delay: 0.4 }}
-              className="font-mauren text-[28vw] md:text-[22vh] leading-none tracking-tight select-none uppercase transform scale-y-110 scale-105 drop-shadow-xl"
-            >
-              JERKY
-            </motion.h1>
-          </div>
+          <motion.h1 
+            initial={{ scaleX: 0.5, scaleY: 0.5, opacity: 0 }}
+            animate={{ scaleX: 1.05, scaleY: 1.10, opacity: 1 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 150, 
+              damping: 10, 
+              mass: 1.5,
+              delay: 0.3
+            }}
+            className="mt-4 md:mt-8 font-mauren text-[28vw] md:text-[22vh] leading-none tracking-tight select-none uppercase drop-shadow-xl"
+          >
+            JERKY
+          </motion.h1>
         </div>
         {/* Coming Soon bar */}
         <div className="mt-2 tracking-[0.15em] text-xs md:text-sm font-sans font-bold bg-brand-charcoal text-brand-cream py-1 px-4 rounded-sm animate-fade-in-delayed">
