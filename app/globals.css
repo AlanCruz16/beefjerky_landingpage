@@ -10,17 +10,63 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+  
+  /* Casa Lavinia Brand Colors */
+  --color-brand-teal: #5BBFAD;
+  --color-brand-cream: #E8E07A;
+  --color-brand-red: #D95F4B;
+  --color-brand-amber: #D4894A;
+  --color-brand-charcoal: #1A1A1A;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Custom Fonts */
+  --font-passion-one: var(--font-passion-one);
+  --font-caveat: var(--font-caveat);
+  --font-mauren: var(--font-mauren);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
+
+/* Custom CSS Animations for Premium Feel */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.9) scaleY(1.05); }
+  to { opacity: 1; transform: scale(1) scaleY(1.05); }
+}
+
+@keyframes bounceOnce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-delayed {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-scale-up-delayed {
+  animation: scaleUp 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-bounce-once {
+  animation: bounceOnce 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
