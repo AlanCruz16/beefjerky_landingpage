@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Passion_One, Caveat } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -32,6 +32,10 @@ const mauren = localFont({
 export const metadata: Metadata = {
   title: "Casa Lavinia | Carne Seca Beef Jerky",
   description: "Dosis perfecta de energía. Hecho con 100% res en Sonora, México.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#5BBFAD",
 };
 
 export default function RootLayout({
