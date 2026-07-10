@@ -24,12 +24,8 @@
   --font-mauren: var(--font-mauren);
 }
 
-html {
-  background-color: var(--color-brand-teal);
-}
-
 body {
-  background-color: var(--color-brand-amber);
+  background-color: var(--color-brand-teal);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   overflow: hidden;
