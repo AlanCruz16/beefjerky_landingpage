@@ -37,7 +37,7 @@ export default function QrPage() {
     <main className="flex flex-col min-h-[100dvh] w-full select-none">
       {/* SECCIÓN 1: TEAL (Original) */}
       <section
-        className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] text-brand-cream relative"
+        className="flex-1 bg-brand-teal flex flex-col justify-center items-center text-center p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] text-brand-cream sticky top-0"
       >
         {/* Logo Casa Lavinia */}
         <div className="mt-2 animate-fade-in flex flex-col items-center z-10 -mb-4 md:-mb-8">
@@ -99,7 +99,7 @@ export default function QrPage() {
 
       {/* SECCIÓN 3: ÁMBAR (BBQ) */}
       <section
-        className="flex-1 bg-brand-amber flex flex-col items-center justify-between text-center px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3 md:px-6 md:pb-[calc(1.5rem+env(safe-area-inset-bottom))] md:pt-5 text-brand-cream relative"
+        className="flex-1 bg-brand-amber flex flex-col items-center justify-between text-center px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3 md:px-6 md:pb-[calc(1.5rem+env(safe-area-inset-bottom))] md:pt-5 text-brand-cream sticky bottom-0"
       >
         <div className="w-full flex flex-col items-center justify-start gap-5 md:gap-7">
           {/* Subtitle / Hook */}
