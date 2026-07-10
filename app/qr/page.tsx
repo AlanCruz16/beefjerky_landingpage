@@ -4,6 +4,17 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
+const subtitleContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.6 }
+  }
+};
+const subtitleWord: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100 } }
+};
 
 export default function QrPage() {
   const [email, setEmail] = useState("");
@@ -88,17 +99,28 @@ export default function QrPage() {
 
       {/* SECCIÓN 3: ÁMBAR (BBQ) */}
       <section
-        className="flex-1 bg-brand-amber flex flex-col justify-between items-center text-center p-6 text-brand-cream relative"
+        className="flex-1 bg-brand-amber flex flex-col items-center justify-between text-center px-4 pb-4 pt-3 md:px-6 md:pb-6 md:pt-5 text-brand-cream relative"
       >
-        {/* Subtitle / Hook */}
-        <div className="flex-1 flex items-center justify-center max-w-sm px-4">
-          <p className="font-sans text-base md:text-lg font-bold leading-snug tracking-wide uppercase">
-            Próximamente tu snack alto en proteína favorito
-          </p>
-        </div>
+        <div className="w-full flex flex-col items-center justify-start gap-5 md:gap-7">
+          {/* Subtitle / Hook */}
+          <div className="max-w-md px-4">
+            <motion.p 
+              variants={subtitleContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              className="font-sans text-lg md:text-2xl font-bold leading-snug tracking-wide uppercase text-center flex flex-wrap justify-center"
+            >
+              {"Próximamente tu snack alto en proteína favorito".split(" ").map((word, index) => (
+                <motion.span key={index} variants={subtitleWord} className="inline-block mr-1.5 md:mr-2 mb-1">
+                  {word}
+                </motion.span>
+              ))}
+            </motion.p>
+          </div>
 
-        {/* Waitlist Form */}
-        <div className="w-full max-w-sm px-4 mb-4">
+          {/* Waitlist Form */}
+          <div className="w-full max-w-sm px-4">
           {submitted ? (
             <div className="bg-brand-charcoal text-brand-cream rounded-full py-3 px-6 text-sm font-bold animate-bounce-once">
               ¡LISTO! TE AVISAREMOS ANTES QUE A NADIE 🌵
@@ -123,9 +145,10 @@ export default function QrPage() {
             </form>
           )}
         </div>
+        </div>
 
         {/* Footer */}
-        <div className="flex flex-col items-center gap-1.5 opacity-90">
+        <div className="flex flex-col items-center gap-1.5 opacity-90 mt-4 md:mt-0">
           <span className="text-[10px] tracking-widest font-sans font-semibold">
             ORGULLOSAMENTE SONORENSE
           </span>
